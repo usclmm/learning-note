@@ -1,9 +1,11 @@
 $cBlack: black;
+$cAqua: #00ffff;
 
+/*矢印*/
 #button-block {
-    display: block;
-    padding: 50px 0;
-    text-align: center;
+  display: block;
+  padding: 50px 0;
+  text-align: center;
 
   .arrow {
     position: relative;
@@ -40,6 +42,35 @@ $cBlack: black;
 
     &:hover::after {
       right: -20%;
+    }
+  }
+
+  /*吹き出し*/
+  .btn {
+    margin: 100px auto;
+    width: 100px;
+    height: 100px;
+
+    &.shift-background {
+      display: flex;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid $cBlack;
+      border-radius: 50px;
+      font-weight: bold;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 5%;
+        width: 105%;
+        height: 100%;
+        background-color: $cAqua;
+        border-radius: 50px;
+        z-index: -1;
+      }
     }
   }
 }
