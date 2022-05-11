@@ -1,0 +1,91 @@
+$cBlack: black;
+$cAqua: #00ffff;
+
+/*矢印*/
+#button-block {
+  display: block;
+  padding: 50px 0;
+  text-align: center;
+
+  .arrow {
+    position: relative;
+    display: inline-block;
+    color: $cBlack;
+    text-decoration: none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 15%;
+      width: 98%;
+      height: 1px;
+      background-color: $cBlack;
+      transition: all 0.3s;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      right: -20px;
+      width: 15px;
+      height: 1px;
+      background: $cBlack;
+      transform: rotate(35deg);
+      transition: all 0.3s;
+    }
+
+    &:hover::before {
+      left: 20%;
+    }
+
+    &:hover::after {
+      right: -20%;
+    }
+  }
+
+  /*丸型*/
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.shift-background {
+      margin: 100px auto;
+      position: relative;
+      border: 2px solid $cBlack;
+      border-radius: 50px;
+      font-weight: bold;
+      width: 100px;
+      height: 100px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 5%;
+        width: 105%;
+        height: 100%;
+        background-color: $cAqua;
+        border-radius: 50px;
+        z-index: -1;
+      }
+    }
+
+    &.pushButton {
+      display: inline-block;
+      position: relative;
+      padding: 10px 40px;
+      border: 2px solid $cBlack;
+      box-shadow: 5px 5px $cBlack;
+      transition: all 0.3s;
+      font-weight: 600;
+
+      &:hover {
+        box-shadow: none;
+        transform: translate(2.5px, 2.5px);
+      }
+    }
+  }
+}
